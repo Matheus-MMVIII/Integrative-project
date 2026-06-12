@@ -1,0 +1,4 @@
+email,password,type
+admin@email.com,123456,ADMIN
+manager@email.com,654321,MANAGER
+seller@email.com,111111,SELLER
