@@ -1,20 +1,18 @@
 package com.pi.model;
 
-public final class Client {
+public final class Supplier {
     private Long id;
     private String name;
-    private Cpf cpf;
+    private String cnpj;
     private String phone;
     private String email;
-    private String origin;
 
-    public Client(Long id, String name, String cpf, String phone, String email, String origin) {
+    public Supplier(Long id, String name, String cnpj, String phone, String email) {
         this.id = id;
         setName(name);
-        setCpf(cpf);
-        setPhone(phone);
+        setCnpj(cnpj);
+        this.phone = phone == null ? "" : phone.trim();
         setEmail(email);
-        setOrigin(origin);
     }
 
     public Long getId() {
@@ -31,17 +29,21 @@ public final class Client {
 
     public void setName(String name) {
         if (name == null || name.isBlank()) {
-            throw new IllegalArgumentException("O nome do cliente e obrigatorio.");
+            throw new IllegalArgumentException("O nome do fornecedor e obrigatorio.");
         }
         this.name = name.trim();
     }
 
-    public String getCpf() {
-        return cpf.getCpf();
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = new Cpf(cpf);
+    public void setCnpj(String cnpj) {
+        String normalized = cnpj == null ? "" : cnpj.replaceAll("\\D", "");
+        if (!normalized.matches("\\d{14}")) {
+            throw new IllegalArgumentException("CNPJ deve conter 14 digitos.");
+        }
+        this.cnpj = normalized;
     }
 
     public String getPhone() {
@@ -58,19 +60,8 @@ public final class Client {
 
     public void setEmail(String email) {
         if (email == null || !email.contains("@")) {
-            throw new IllegalArgumentException("E-mail do cliente invalido.");
+            throw new IllegalArgumentException("E-mail do fornecedor invalido.");
         }
         this.email = email.trim().toLowerCase();
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        if (origin == null || origin.isBlank()) {
-            throw new IllegalArgumentException("A origem do cliente e obrigatoria.");
-        }
-        this.origin = origin.trim();
     }
 }
