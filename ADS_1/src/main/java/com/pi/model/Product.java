@@ -3,7 +3,7 @@ package com.pi.model;
 public class Product {
     private final String NAME;
     private Double price;
-    private int id;
+    private Long id;
     private int stock;
 
     public Product(String name, Double price, int stock) {
@@ -12,7 +12,7 @@ public class Product {
         this.stock = stock;
     }
 
-    public Product(String name, Double price, int stock, int id) {
+    public Product(String name, Double price, int stock, Long id) {
         this.NAME = name;
         this.price = price;
         this.stock = stock;
@@ -27,7 +27,7 @@ public class Product {
         return price;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -35,7 +35,7 @@ public class Product {
         return stock;
     }
 
-    public void seId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
