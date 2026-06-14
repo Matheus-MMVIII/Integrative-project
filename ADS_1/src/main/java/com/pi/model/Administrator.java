@@ -15,6 +15,6 @@ public class Administrator {
     }
 
     public void createProduct(Product product) throws IOException {
-        productRepository.createProduct(product);
+        productRepository.create(product);
     }
 }

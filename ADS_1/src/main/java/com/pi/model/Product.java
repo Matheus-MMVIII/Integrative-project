@@ -3,14 +3,20 @@ package com.pi.model;
 public class Product {
     private final String NAME;
     private Double price;
-    private final int ID;
+    private int id;
     private int stock;
 
-    public Product(String name, Double price, int id, int stock) {
+    public Product(String name, Double price, int stock) {
         this.NAME = name;
         this.price = price;
-        this.ID = id;
         this.stock = stock;
+    }
+
+    public Product(String name, Double price, int stock, int id) {
+        this.NAME = name;
+        this.price = price;
+        this.stock = stock;
+        this.id = id;
     }
 
     public String getName() {
@@ -22,11 +28,15 @@ public class Product {
     }
 
     public int getId() {
-        return ID;
+        return id;
     }
 
     public int getStock() {
         return stock;
+    }
+
+    public void seId(int id) {
+        this.id = id;
     }
 
     public void changePrice(Double newPrice) {

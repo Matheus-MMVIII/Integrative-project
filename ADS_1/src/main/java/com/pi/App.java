@@ -10,6 +10,6 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) throws IOException {
         Administrator administrator = new Administrator("admin@email.com", "123456", new ProductRepository());
-        administrator.createProduct(new Product("Test", 20.0d, 1, 10));
+        administrator.createProduct(new Product("Test", 20.0d, 10));
     }
 }
