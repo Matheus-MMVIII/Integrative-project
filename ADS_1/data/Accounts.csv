@@ -1,4 +1,4 @@
-email,password,type
-admin@email.com,123456,ADMIN
-manager@email.com,654321,MANAGER
-seller@email.com,111111,SELLER
+id,name,email,passwordHash,role,active
+1,Administrador,admin@email.com,8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92,ADMIN,true
+2,Gerente,manager@email.com,481f6cc0511143ccdd7e2d1b1b94faf0a700a8b49cd13922a70b5ae28acaa8c5,MANAGER,true
+3,Vendedor,seller@email.com,bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a,SELLER,true
