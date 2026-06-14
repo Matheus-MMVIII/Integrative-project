@@ -30,7 +30,7 @@ public class Login {
     }
 
     private List<String> getValidAccounts() throws IOException {
-        return Files.readAllLines(Path.of("Accounts.csv"));
+        return Files.readAllLines(Path.of("ADS_1/data/Accounts.csv"));
     }
 
     public String getType() {
