@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Usuario {
 
-    private long idUsuario;
+    private long id;
     private String nome;
     private String email;
     private String cpf;
@@ -13,9 +13,9 @@ public class Usuario {
     private LocalDateTime dataCadastro;
     private Status status;
 
-    public Usuario(long idUsuario, String nome, String email, String cpf, String senha,
+    public Usuario(long id, String nome, String email, String cpf, String senha,
                    TipoUsuario tipoUsuario, LocalDateTime dataCadastro, Status status) {
-        setIdUsuario(idUsuario);
+        setIdUsuario(id);
         setNome(nome);
         setEmail(email);
         setCpf(cpf);
@@ -25,12 +25,17 @@ public class Usuario {
         setStatus(status);
     }
 
-    public long getIdUsuario() {
-        return idUsuario;
+    public Usuario(String nome, String email, String cpf, String senha,
+                   TipoUsuario tipoUsuario, LocalDateTime dataCadastro, Status status) {
+        this(-1, nome, email, cpf, senha, tipoUsuario, dataCadastro, status);
     }
 
-    public void setIdUsuario(long idUsuario) {
-        this.idUsuario = idUsuario;
+    public long getIdUsuario() {
+        return id;
+    }
+
+    public void setIdUsuario(long id) {
+        this.id = id;
     }
 
     public String getNome() {
